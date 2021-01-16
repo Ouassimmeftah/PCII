@@ -15,6 +15,8 @@ public class Controleur implements MouseListener{
        return this.etat;
    }
 
+   /** Bug sur mouse released qui ne fait pas correctement tomber l'ovale quand on relache le bouton souris  */
+
    @Override
    public void mouseClicked(MouseEvent e){
         this.etat.jump();

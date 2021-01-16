@@ -1,7 +1,4 @@
-import javax.sound.sampled.Control;
 import javax.swing.*;
-import java.awt.Dimension;
-import java.awt.event.*;
 
 
 public class Main {
