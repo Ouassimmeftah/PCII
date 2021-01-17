@@ -6,6 +6,7 @@ public class Etat {
     public Etat(int h){
         this.hauteur = h;
     }
+    /** getter/setter classiques */
 
     public int getHauteur() {
         return this.hauteur;

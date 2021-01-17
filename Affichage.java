@@ -21,9 +21,13 @@ public class Affichage extends JPanel{
         setPreferredSize(new Dimension(LARG, HAUT));
     }
 
+    /** getter/setter classiques */
+
     public Etat getModele(){
         return this.etat;
     }
+
+    /** méthode paint pour l'affichage */
 
     @Override
     public void paint(Graphics g){
