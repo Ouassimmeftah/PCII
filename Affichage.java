@@ -32,6 +32,7 @@ public class Affichage extends JPanel{
     @Override
     public void paint(Graphics g){
         super.paint(g);
+        super.revalidate();
         super.repaint();
         g.drawOval(X,this.etat.getHauteur(),LARGEUROVAL,LONGUEUROVAL);
     }

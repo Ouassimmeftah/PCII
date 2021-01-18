@@ -1,10 +1,12 @@
 public class Etat {
     
+    //private Affichage affichage;
     private int hauteur ;
     public static final int tailleSaut = 10;
-    
+    // Affichage a
     public Etat(int h){
         this.hauteur = h;
+        //this.affichage = a;
     }
     /** getter/setter classiques */
 
@@ -14,6 +16,7 @@ public class Etat {
 
     public void setHauteur(int x){
         this.hauteur = x;
+        
     }
 
     /** jump() qui sert a faire un saut sur l'écran */
@@ -27,7 +30,7 @@ public class Etat {
             
     }
 
-    /** Tentative de codage d'une pseudo gravité */
+    /** Tentative de codage d'une pseudo gravité 
 
     public void gravite(){
         if(this.getHauteur()< Affichage.HAUT && this.getHauteur() > 0){
@@ -36,6 +39,17 @@ public class Etat {
             System.out.println("Attention ca tombe");
         }
 
+    }
+    */
+
+    public void moveDown(){
+        if(this.getHauteur()< Affichage.HAUT && this.getHauteur() > 0){
+            this.setHauteur(this.hauteur+tailleSaut);
+            
+        } else{
+            System.out.println("Attention ca tombe");
+        }
+        
     }
     
 }

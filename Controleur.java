@@ -37,7 +37,7 @@ public class Controleur implements MouseListener{
    }
    @Override
    public void mouseReleased(MouseEvent e){
-        this.etat.gravite();
+        
    }
 
 }
