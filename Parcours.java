@@ -47,6 +47,26 @@ public class Parcours{
         }
     }
 
+    public ArrayList<Point> getParcours(){
+        ArrayList<Point> copie = this.listePoints;
+        for (Point point : copie){
+            point.move(point.x - taille, point.y );
+        }
+        return copie;
+    }
+    
+    /** 
+    public void moveRight(){
+        int x; 
+        int y;
+        for (int i = 0; i < this.getTailleListePoints()-1; i++ ){
+            x = (int) (this.getPoint(i).getX() -  taille);
+            y = (int) (this.getPoint(i).getY());
+            this.setPoint(i,new Point(x,y));
+        }
+    }
+    */ 
+
     public Parcours(){
 
     
@@ -68,20 +88,3 @@ public class Parcours{
 
     }
 }
-    /**
-   
-     
-    public ArrayList<Point> getParcours() {
-        ArrayList<Point> copie = listePoints ;
-        for (Point point:
-             copie) {
-            point.move(point.x-positionDepart, point.y);
-        }
-        return copie;
-    }
-
-    public setParcours(){
-
-    }
-    */
-
