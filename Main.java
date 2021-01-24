@@ -8,7 +8,12 @@ public class Main {
         
         Etat etat = new Etat(200);
 
-        Affichage affichage = new Affichage(etat);
+        Parcours ligne = new Parcours();
+
+        Affichage affichage = new Affichage(etat, ligne);
+
+        Voler v = new Voler(etat);
+        v.start();
     
         fenetre.add(affichage);
 

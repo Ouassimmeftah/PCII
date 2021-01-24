@@ -3,11 +3,16 @@ public class Etat {
     //private Affichage affichage;
     private int hauteur ;
     public static final int tailleSaut = 10;
+    public static final int tailleChute = 5;
+
     // Affichage a
     public Etat(int h){
         this.hauteur = h;
         //this.affichage = a;
+        (new Thread(new Voler(this))).start();
+        //(new Thread(new Avancer(this))).start();
     }
+
     /** getter/setter classiques */
 
     public int getHauteur() {
@@ -43,8 +48,9 @@ public class Etat {
     */
 
     public void moveDown(){
-        if(this.getHauteur()< Affichage.HAUT && this.getHauteur() > 0){
-            this.setHauteur(this.hauteur+tailleSaut);
+        int hauteurBas = this.getHauteur() + Affichage.LONGUEUROVAL; 
+        if(hauteurBas < Affichage.HAUT){
+            this.setHauteur(this.hauteur+tailleChute);
             
         } else{
             System.out.println("Attention ca tombe");
