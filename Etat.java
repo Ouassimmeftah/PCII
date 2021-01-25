@@ -1,8 +1,11 @@
+
 public class Etat {
     
-    //private Affichage affichage;
+    private Affichage affichage;
     private int hauteur ;
     private Parcours parcours; 
+    private int hauteurMAX; 
+    private int taille; 
     public static final int tailleSaut = 15;
     public static final int tailleChute = 5;
 
@@ -46,6 +49,15 @@ public class Etat {
             System.out.println("Attention ca tombe");
         }
 
+    }
+    
+
+    public void initialiser(int x, Affichage aff){
+        hauteurMAX = x; 
+        taille = x/5; 
+        affichage = aff; 
+        Avancer avancer = new Avancer(parcours);
+        avancer.start();
     }
     */
 

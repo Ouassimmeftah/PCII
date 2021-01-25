@@ -22,7 +22,7 @@ public class Affichage extends JPanel{
         this.etat = e;
         this.ligne= l; 
         setPreferredSize(new Dimension(LARG, HAUT));
-        
+        //initialiser();
     }
 
     /** getter/setter classiques */
@@ -47,11 +47,13 @@ public class Affichage extends JPanel{
         paintLigne(g);
     }
 
+    /** affichage de l'ovale */
     public void paintOval(Graphics g){
         g.setColor(Color.red);
         g.drawOval(X,this.etat.getHauteur(),LARGEUROVAL,LONGUEUROVAL);
     }
 
+    /** affichage de la ligne */
     public void paintLigne(Graphics g){
         g.setColor(Color.BLACK);
         for(int i =0; i<this.ligne.getTailleListePoints()-1;i++){

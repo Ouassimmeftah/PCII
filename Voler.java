@@ -1,6 +1,6 @@
 public class Voler extends Thread{
 
-    public static int tempsVol = 350;
+    public static int tempsVol = 320;
     private Etat etat;
 
     public Voler(Etat etat){
@@ -23,4 +23,5 @@ public class Voler extends Thread{
             }
         }
     }
+    
 }
