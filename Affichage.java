@@ -22,6 +22,7 @@ public class Affichage extends JPanel{
         this.etat = e;
         this.ligne= l; 
         setPreferredSize(new Dimension(LARG, HAUT));
+        
     }
 
     /** getter/setter classiques */

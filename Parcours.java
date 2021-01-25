@@ -61,6 +61,7 @@ public class Parcours{
 
     public boolean gagner(Point p1, Point p2){
         float pente = (p2.y - p1.y )/ (p2.x - p1.y); 
+        float y = p1.y - pente *(p1.x - this.parcours.getPositionX());
         if()
         return false;
     }
@@ -76,6 +77,21 @@ public class Parcours{
         }
     }
     */ 
+
+    public ArrayList<Point> moveRight(){
+        ArrayList<Point> tab = this.listePoints; 
+        for(Point p : tab){
+            p.move(p.x-5, p.y );
+        }
+        Random r = new Random();
+        int x = tab.get(getTailleListePoints()-1).x; 
+        while(x < Affichage.LARG + 50){
+            x = x+r.nextInt(100);
+            Point p = new Point(x,r.nextInt(200) + this.getTailleListePoints());
+            tab.add(p);
+        }
+        return tab; 
+    }
 
     public Parcours(){
 
