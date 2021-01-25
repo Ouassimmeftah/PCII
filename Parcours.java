@@ -31,6 +31,10 @@ public class Parcours{
         this.positionX = this.positionX + i;
     }
 
+    public int getPositionX(){
+        return this.positionX;
+    }
+
     public void addPointInvisible(){
         if((int) this.getPoint(this.getTailleListePoints()-1).getX() < Affichage.LARG+30){
             int x = (int) this.getPoint(this.getTailleListePoints()-1).getX();
@@ -53,6 +57,12 @@ public class Parcours{
             point.move(point.x - taille, point.y );
         }
         return copie;
+    }
+
+    public boolean gagner(Point p1, Point p2){
+        float pente = (p2.y - p1.y )/ (p2.x - p1.y); 
+        if()
+        return false;
     }
     
     /** 
