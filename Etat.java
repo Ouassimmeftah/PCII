@@ -3,12 +3,13 @@ public class Etat {
     //private Affichage affichage;
     private int hauteur ;
     private Parcours parcours; 
-    public static final int tailleSaut = 10;
+    public static final int tailleSaut = 15;
     public static final int tailleChute = 5;
 
     // Affichage a
-    public Etat(int h){
+    public Etat(int h, Parcours parcours){
         this.hauteur = h;
+        this.parcours = parcours;
         //this.affichage = a;
         (new Thread(new Voler(this))).start();
         (new Thread(new Avancer(parcours))).start();

@@ -17,6 +17,26 @@ public class Parcours{
         private Point positionDepart;
         private int positionX; 
 
+        public Parcours(){
+
+    
+        this.positionX = Affichage.X;
+        this.listePoints = new ArrayList<Point>();
+        this.positionDepart = new Point(Affichage.X /**+ Affichage.LARGEUROVAL/2 */ , Affichage.Y /**+ Affichage.LONGUEUROVAL/2 */);
+        this.listePoints.add(positionDepart);
+
+        int x = (int) (positionDepart.getX());
+        int y = (int) (positionDepart.getY());
+        Random r = new Random();
+
+        while(x < Affichage.LARG + 50){
+            x = x + r.nextInt(longueurMaxLigne - longueurMinLigne) + 20;
+            y = (r.nextInt(plage) + bordureMinLigne); 
+            Point newPoint = new Point(x,y);
+            listePoints.add(newPoint);
+        }
+
+    }
     public int getTailleListePoints(){
         return this.listePoints.size();
     }
@@ -81,6 +101,8 @@ public class Parcours{
     }
     */ 
 
+
+    // 
     public ArrayList<Point> moveRight(){
         ArrayList<Point> tab = this.listePoints; 
         for(Point p : tab){
@@ -96,24 +118,5 @@ public class Parcours{
         return tab; 
     }
 
-    public Parcours(){
-
     
-        this.positionX = Affichage.X;
-        this.listePoints = new ArrayList<Point>();
-        this.positionDepart = new Point(Affichage.X /**+ Affichage.LARGEUROVAL/2 */ , Affichage.Y /**+ Affichage.LONGUEUROVAL/2 */);
-        this.listePoints.add(positionDepart);
-
-        int x = (int) (positionDepart.getX());
-        int y = (int) (positionDepart.getY());
-        Random r = new Random();
-
-        while(x < Affichage.LARG + 50){
-            x = x + r.nextInt(longueurMaxLigne - longueurMinLigne) + 20;
-            y = (r.nextInt(plage) + bordureMinLigne); 
-            Point newPoint = new Point(x,y);
-            listePoints.add(newPoint);
-        }
-
-    }
 }

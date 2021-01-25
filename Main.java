@@ -5,10 +5,10 @@ public class Main {
     public static void main(String[] args) {
 
         JFrame fenetre = new JFrame("flappy bird");
-        
-        Etat etat = new Etat(200);
 
         Parcours ligne = new Parcours();
+
+        Etat etat = new Etat(200, ligne);
 
         Affichage affichage = new Affichage(etat, ligne);
 

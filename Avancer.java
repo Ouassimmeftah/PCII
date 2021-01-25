@@ -1,5 +1,5 @@
 public class Avancer extends Thread {
-    public static final int tempsAvancer = 1000;
+    public static final int tempsAvancer = 200;
 
     private Parcours parcours; 
     
