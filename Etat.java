@@ -2,6 +2,7 @@ public class Etat {
     
     //private Affichage affichage;
     private int hauteur ;
+    private Parcours parcours; 
     public static final int tailleSaut = 10;
     public static final int tailleChute = 5;
 
@@ -10,7 +11,7 @@ public class Etat {
         this.hauteur = h;
         //this.affichage = a;
         (new Thread(new Voler(this))).start();
-        //(new Thread(new Avancer(this))).start();
+        (new Thread(new Avancer(parcours))).start();
     }
 
     /** getter/setter classiques */

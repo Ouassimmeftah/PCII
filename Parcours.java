@@ -11,6 +11,8 @@ public class Parcours{
         public static final int plage = bordureMaxLigne - bordureMinLigne;
         public static final int taille = 5;
 
+        private Etat etat; 
+
         private ArrayList<Point> listePoints;
         private Point positionDepart;
         private int positionX; 
@@ -59,14 +61,15 @@ public class Parcours{
         return copie;
     }
 
+    /** 
     public boolean gagner(Point p1, Point p2){
         float pente = (p2.y - p1.y )/ (p2.x - p1.y); 
-        float y = p1.y - pente *(p1.x - this.parcours.getPositionX());
+        float y = p1.y - pente *(p1.x - this.getPositionX());
         if()
         return false;
     }
     
-    /** 
+    
     public void moveRight(){
         int x; 
         int y;
