@@ -1,8 +1,8 @@
-
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import javax.swing.JPanel;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
 
 
@@ -15,13 +15,24 @@ public class Affichage extends JPanel{
     public static final int LARGEUROVAL = 50;
     public static final int LONGUEUROVAL = 80;
 
+    private JFrame fenetre;
+    private ImageIcon img;
+    private JLabel background;
+
     private Etat etat;
     private Parcours ligne;
 
     public Affichage(Etat e, Parcours l){
+        
         this.etat = e;
         this.ligne= l; 
         setPreferredSize(new Dimension(LARG, HAUT));
+        //image = ImageIO.read(new File("C:\Users\ouass\Downloads\fondXP.jpg"));
+
+        img = new ImageIcon("fondXP.jpg");
+        background = new JLabel("",img,JLabel.CENTER);
+        background.setSize(LARG,HAUT);;
+        fenetre.add(background);
         //initialiser();
     }
 

@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.io.File;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -13,9 +15,10 @@ public class Main {
 
         Voler v = new Voler(etat);
         v.start();
-    
-        fenetre.add(affichage);
 
+
+        fenetre.add(affichage);
+        
         fenetre.addMouseListener(new Controleur(etat));
 
         fenetre.pack();

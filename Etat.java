@@ -71,5 +71,14 @@ public class Etat {
         }
         
     }
+
+    /**
+     
+        public boolean testPerdu(){
+
+    }
+
+    */
+    
     
 }
