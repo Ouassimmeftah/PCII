@@ -11,7 +11,7 @@ public class Etat {
     public static final int tailleSaut = 15;
     public static final int tailleChute = 5;
 
-    // Affichage a
+    // Constructeur etat
     public Etat(int h, Parcours parcours) {
         this.hauteur = h;
         this.parcours = parcours;

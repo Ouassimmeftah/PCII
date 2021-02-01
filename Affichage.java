@@ -7,6 +7,8 @@ import javax.swing.*;
 
 public class Affichage extends JPanel {
 
+    // parametres necessaires
+
     private static final long serialVersionUID = 1L;
     public static final int LARG = 600;
     public static final int HAUT = 400;
@@ -14,8 +16,10 @@ public class Affichage extends JPanel {
     public static final int Y = 100;
     public static final int LARGEUROVAL = 50;
     public static final int LONGUEUROVAL = 80;
-    public static boolean boucle = true;
-    private BufferedImage img;
+
+    public static boolean boucle = true; // variable pour la boucle
+
+    private BufferedImage img; // image de fond
     private Etat etat;
     private Parcours ligne;
 
@@ -47,7 +51,7 @@ public class Affichage extends JPanel {
         return this.ligne;
     }
 
-    /** méthode paint pour l'affichage */
+    /** méthode paint pour l'affichage avec de l'anti aliasing */
 
     @Override
     public void paint(Graphics g) {
@@ -59,7 +63,6 @@ public class Affichage extends JPanel {
 
         g.drawImage(img, 0, 0, LARG, HAUT, null);
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
         paintOval(g);
         paintLigne(g);
     }

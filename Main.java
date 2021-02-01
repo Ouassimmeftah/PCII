@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 
+// classe main avec throw exception pour imageIO
 public class Main {
     public static void main(String[] args) throws IOException {
 
@@ -13,10 +14,15 @@ public class Main {
 
         Affichage affichage = new Affichage(etat, ligne);
 
+        // thread pour utiliser periodiquement la methode moveDown
+
         Voler v = new Voler(etat);
         v.start();
 
+        // thread pour la methode de collision et la fenetre d'arret
         (new Thread(new stop(etat))).start();
+
+        // methodes pour la fenetre
 
         fenetre.add(affichage);
 
