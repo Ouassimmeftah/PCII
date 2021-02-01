@@ -28,7 +28,10 @@ public class Etat {
 
     public void setHauteur(int x) {
         this.hauteur = x;
+    }
 
+    public ArrayList<Point> getParcours() {
+        return parcours.getParcours();
     }
 
     /** jump() qui sert a faire un saut sur l'écran */
@@ -56,6 +59,7 @@ public class Etat {
      * affichage = aff; Avancer avancer = new Avancer(parcours); avancer.start(); }
      */
 
+    // methode de gravite de l'ovale
     public void moveDown() {
         int hauteurBas = this.getHauteur() + Affichage.LONGUEUROVAL;
         if (hauteurBas < Affichage.HAUT) {
@@ -67,10 +71,7 @@ public class Etat {
 
     }
 
-    public ArrayList<Point> getParcours() {
-        return parcours.getParcours();
-    }
-
+    // methode qui mets en place les collisions et leur detections
     public boolean testPerdu() {
         Point p1 = getParcours().get(0);
         Point p2 = getParcours().get(1);
