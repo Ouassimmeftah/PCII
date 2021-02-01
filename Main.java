@@ -16,6 +16,8 @@ public class Main {
         Voler v = new Voler(etat);
         v.start();
 
+        (new Thread(new stop(etat))).start();
+
         fenetre.add(affichage);
 
         fenetre.addMouseListener(new Controleur(etat));

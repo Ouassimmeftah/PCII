@@ -7,13 +7,14 @@ import javax.swing.*;
 
 public class Affichage extends JPanel {
 
+    private static final long serialVersionUID = 1L;
     public static final int LARG = 600;
     public static final int HAUT = 400;
     public static final int X = 20;
     public static final int Y = 100;
     public static final int LARGEUROVAL = 50;
     public static final int LONGUEUROVAL = 80;
-
+    public static boolean boucle = true;
     private BufferedImage img;
     private Etat etat;
     private Parcours ligne;
