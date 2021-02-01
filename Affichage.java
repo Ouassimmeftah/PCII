@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -13,18 +14,18 @@ public class Affichage extends JPanel {
     public static final int LARGEUROVAL = 50;
     public static final int LONGUEUROVAL = 80;
 
-    private JFrame fenetre;
-    private ImageIcon img;
-    private JLabel background;
-
+    private BufferedImage img;
     private Etat etat;
     private Parcours ligne;
 
-    public Affichage(Etat e, Parcours l) {
+    public Affichage(Etat e, Parcours l) throws IOException {
 
         this.etat = e;
         this.ligne = l;
         setPreferredSize(new Dimension(LARG, HAUT));
+
+        img = ImageIO.read(new File("fondXP.jpg"));
+
         // image = ImageIO.read(new File("C:\Users\ouass\Downloads\fondXP.jpg"));
         /**
          * img = new ImageIcon("fondXP.jpg"); background = new
@@ -52,6 +53,11 @@ public class Affichage extends JPanel {
         super.paint(g);
         super.revalidate();
         super.repaint();
+
+        Graphics2D g2 = (Graphics2D) g;
+
+        g.drawImage(img, 0, 0, LARG, HAUT, null);
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         paintOval(g);
         paintLigne(g);
